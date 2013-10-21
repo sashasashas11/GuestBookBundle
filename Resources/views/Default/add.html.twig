@@ -1,0 +1,20 @@
+{% extends '::base.html.twig' %}
+
+{% block title %}Add messege{% endblock %}
+ {% block stylesheets %}
+     {{ parent() }}
+     <link href="{{ asset('/bundles/acmeguestbook/css/guestBook.css') }}" type="text/css" rel="stylesheet" media="screen">
+ {% endblock %}
+{% block body %}
+    <h1>Гостевая книга</h1>
+    <p class="text-info">Добавить собщение:</p>
+
+    <form action="{{ path('acme_guest_book_add_msg') }}" method="post" {{ form_enctype(form) }}>
+        {{ form_widget(form) }}
+
+        <div class="row-fluid">
+            <input class="btn btn-success" type="submit" name="submit" value="Отправить">
+        </div>
+    </form>
+
+{% endblock %}

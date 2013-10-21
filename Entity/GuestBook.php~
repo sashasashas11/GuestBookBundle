@@ -1,0 +1,47 @@
+<?php
+/**
+ * Created by JetBrains PhpStorm.
+ * User: sasha
+ * Date: 20.10.13
+ * Time: 18:11
+ * To change this template use File | Settings | File Templates.
+ */
+
+namespace Acme\GuestBookBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * @ORM\Entity
+ * @ORM\Table(name="guest-book")
+ */
+class GuestBook
+{
+	/**
+	 * @ORM\Id
+	 * @ORM\Column(type="integer")
+	 * @ORM\GeneratedValue(strategy="AUTO")
+	 */
+	protected $id;
+
+	/**
+	 * @ORM\Column(type="string", length=50)
+	 */
+	protected $name;
+
+	/**
+	 * @ORM\Column(type="string", length=50)
+	 */
+	protected $email;
+
+	/**
+	 * @ORM\Column(type="text")
+	 */
+	protected $message;
+
+	/**
+	 * @ORM\Column(type="datetime")
+	 */
+	protected $date;
+
+}

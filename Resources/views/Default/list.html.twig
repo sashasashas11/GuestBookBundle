@@ -1,0 +1,28 @@
+{% extends '::base.html.twig' %}
+
+{% block title %}list{% endblock %}
+
+{% block body %}
+    <h1>Список сообщений</h1>
+    <a class="btn btn-info" href="{{ path('acme_guest_book_add_msg') }}">Добавить собщение</a>
+    <table id="tablesorter-demo" class="table table-striped">
+        <thead>
+        <tr>
+            <th>Имя</th>
+            <th>Email</th>
+            <th>Сообщение</th>
+            <th>Дата</th>
+        </tr>
+        </thead>
+        <tbody>
+        {% for book in books %}
+        <tr>
+            <td>{{ book.Name }}</td>
+            <td>{{ book.Email }}</td>
+            <td>{{ book.Message }}</td>
+            <td>{{ book.Date.date }}</td>
+        </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+{% endblock %}

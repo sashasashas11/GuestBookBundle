@@ -1,0 +1,18 @@
+acme_guest_book_homepage:
+    pattern:  /hello/{name}
+    defaults: { _controller: AcmeGuestBookBundle:Default:index }
+acme_guest_book_add_msg:
+    pattern:  /add
+    defaults: { _controller: AcmeGuestBookBundle:GuestBook:add }
+acme_guest_book_list:
+    pattern:  /
+    defaults: { _controller: AcmeGuestBookBundle:GuestBook:list }
+acme_guest_book_:
+    pattern:  /add-book
+    defaults: { _controller: AcmeGuestBookBundle:GuestBook:book }
+#acme_guest_book_submit:
+#    pattern:  /list
+#    defaults:  {_controller: AcmeGuestBookBundle:GuestBook:addBook }
+#    requirements:
+#        _method:  POST
+
